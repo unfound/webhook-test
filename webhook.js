@@ -28,7 +28,7 @@ var router = new Router({
 });
 
 router.use(bodyParser());
-router.get('/get/:num', ctx => {
+router.get('/', ctx => {
   let body = records.getData()
   if (ctx.params.num) {
     const num = ctx.params.num > body.length ? body.length : ctx.params.num
@@ -37,7 +37,7 @@ router.get('/get/:num', ctx => {
   ctx.response.set('Content-Type', 'text/plain;charset=utf-8');
   ctx.body = arrToStr(body);
 });
-router.all('/', ctx => {
+router.post('/', ctx => {
   const body = ctx.request.body;
   if (!isEmpty(body) || !body.repository || body.repository.url.indexOf('github.com') === -1) return;
   const currentBranch = body.ref.split('/')[2];
