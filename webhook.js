@@ -12,7 +12,7 @@ const CMD = 'sh ./deploy.sh';
 function arrToStr (arr) {
   let str = '';
   arr.forEach(item => {
-    str += item + '\n';
+    str += JSON.stringify(item) + '\n';
   })
   return str;
 }
@@ -30,11 +30,11 @@ var router = new Router({
 router.use(bodyParser());
 router.get('/', ctx => {
   let body = records.getData();
-  console.log('getData: ', body)
-  if (ctx.params.num) {
-    const num = ctx.params.num > body.length ? body.length : ctx.params.num;
-    body.reverse().splice(0, num);
-  }
+  // console.log('getData: ', body)
+  // if (ctx.params.num) {
+  //   const num = ctx.params.num > body.length ? body.length : ctx.params.num;
+  //   body.reverse().splice(0, num);
+  // }
   ctx.response.set('Content-Type', 'text/plain;charset=utf-8');
   ctx.body = arrToStr(body);
 });
