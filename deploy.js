@@ -1,6 +1,7 @@
 const exec = require('child_process').exec;
 
 function deploy (cmd, errCb) {
+  console.log('--------CMD START!---------');
   exec(cmd, (err, stdout, stderr) => {
     if (err) {
       console.error(err);
