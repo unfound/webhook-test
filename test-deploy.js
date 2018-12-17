@@ -7,7 +7,7 @@ exec('sh ./deploy.sh', (err, stdout, stderr) => {
     errCb();
     return
   }
-
+  console.log('test!!!');
   console.log('stdout-------->', stdout);
   console.log('stderr-------->', stderr);
 })
