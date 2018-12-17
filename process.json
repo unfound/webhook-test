@@ -9,6 +9,7 @@
     ".git/"
   ],
   "restart_delay": 10000,
+  "kill_timeout": 9000,
   "error_file": "./logs/app-err.log",
   "out,_file": "./logs/app-out.log",
   "env": {

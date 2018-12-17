@@ -12,7 +12,6 @@ function setData (data = {}) {
     time: new Date().toLocaleString(),
     data
   });
-  console.log('setData: ', records)
   fse.writeJSON(JSON_PATH, records);
 }
 
