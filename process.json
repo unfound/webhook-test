@@ -4,8 +4,9 @@
   "cwd": "./",
   "watch": true,
   "ignore_watch": [
-    "node_modules",
-    "./record-list.json"
+    "node_modules/",
+    "./record-list.json",
+    ".git/"
   ],
   "restart_delay": 10000,
   "error_file": "./logs/app-err.log",
