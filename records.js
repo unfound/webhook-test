@@ -9,6 +9,7 @@ function setData (data = {}) {
     time: new Date().toLocaleString(),
     data
   });
+  console.log('setData: ', records)
   fse.writeJSON('./record-list.json', records);
 }
 
