@@ -1,20 +1,23 @@
 const fse = require('fs-extra');
 
 const MAX_NUMS = 20;
+const JSON_PATH = './record-list.json';
 
 function setData (data = {}) {
-  let records = fse.readJSONSync('./record-list.json');
+  fse.ensureFileSync(JSON_PATH);
+  let records = fse.readJSONSync(JSON_PATH);
+  Array.isArray(records) ? true : records = [];
   if (records.length >= MAX_NUMS) records.shift();
   records.push({
     time: new Date().toLocaleString(),
     data
   });
   console.log('setData: ', records)
-  fse.writeJSON('./record-list.json', records);
+  fse.writeJSON(JSON_PATH, records);
 }
 
 function getData () {
-  return fse.readJSONSync('./record-list.json');
+  return fse.readJSONSync(JSON_PATH);
 }
 
 module.exports = { setData, getData };

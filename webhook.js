@@ -47,7 +47,8 @@ router.post('/', ctx => {
   const repName = body.repository.name;
   console.log(repName + '更新啦！');
   records.setData(body);
-  deploy(CMD, () => {});
+  deploy(CMD, () => { console.log('------CMD ERROR !------') });
+  ctx.status = 200;
 });
 
 app.use(router.routes());
