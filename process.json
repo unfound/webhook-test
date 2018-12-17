@@ -6,7 +6,8 @@
   "ignore_watch": [
     "node_modules",
     "./record-list.json",
-    ".git"
+    ".git",
+    ".pm2"
   ],
   "restart_delay": 10000,
   "kill_timeout": 9000,
