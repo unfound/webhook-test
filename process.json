@@ -1,0 +1,16 @@
+{
+  "name": "webhook",
+  "script": "./webhook.js",
+  "cwd": "./",
+  "watch": true,
+  "ignore_watch": [
+    "node_modules",
+    "./record-list.json"
+  ],
+  "restart_delay": 10000,
+  "error_file": "./logs/app-err.log",
+  "out,_file": "./logs/app-out.log",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
