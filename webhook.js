@@ -37,10 +37,10 @@ router.get('/:num', ctx => {
   let body = records.getData();
   if (ctx.params.num) {
     const num = ctx.params.num > body.length ? body.length : ctx.params.num;
-    body.reverse().splice(0, num);
+    body = body.reverse().splice(0, num);
   }
   ctx.response.set('Content-Type', 'text/plain;charset=utf-8');
-  ctx.body = arrToStr(body);
+  ctx.body = 'Github更新信息: \n' + arrToStr(body);
 });
 router.post('/', ctx => {
   const body = ctx.request.body;
